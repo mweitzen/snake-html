@@ -14,6 +14,9 @@ let animation
 export function getAnimation(){
   return animation
 }
+export function setAnimation(){
+  animation = window.requestAnimationFrame(main)
+}
 let lastRenderTime = 0
 let gameOver = false
 function main(currentTime) {

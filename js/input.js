@@ -1,7 +1,7 @@
 let inputDirection = { x: 0, y: 0 }
 let lastInputDirection = null
 import { getSnakeBody } from './snake.js'
-import {getAnimation} from './main.js'
+import { getAnimation, setAnimation } from './main.js'
 
 let paused = false
 window.addEventListener('keydown', e => {
@@ -11,7 +11,7 @@ window.addEventListener('keydown', e => {
       return window.cancelAnimationFrame(getAnimation())
     }
     paused = false
-    // return window.cancelAnimationFrame(getAnimation())      
+    return setAnimation()
   }
   if (!lastInputDirection || lastInputDirection.x === 0) {
     if (e.key === 'ArrowLeft') return inputDirection = { x: -1, y: 0 }
